@@ -1,0 +1,9 @@
+$color: salmon;
+
+body {
+  background-color: $color;
+  h1 {
+    display: flex;
+    font-size: 40px;
+  }
+}
