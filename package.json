@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack serve",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +12,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cli": "^1.0.1",
-    "webpack": "^5.38.1"
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "css-loader": "^5.2.6",
