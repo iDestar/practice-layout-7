@@ -41,6 +41,10 @@ module.exports = {
           'postcss-loader',
         ],
       },
+      {
+        test: /\.(html)$/,
+        use: ['html-loader'],
+      },
     ],
   },
   devServer: {

@@ -95,7 +95,7 @@ a {
 }
 
 .bd-grid {
-  display: gird;
+  display: grid;
   gap: 1.5rem;
 }
 
@@ -160,4 +160,238 @@ a {
 
 .show-menu {
   top: $header-height;
+}
+
+.active-link {
+  color: $first-color;
+}
+
+.scroll-header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scrolltop {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  background: rgba(6, 156, 84, 0.5);
+  border-radius: 0.4rem;
+  z-index: $z-tooltip;
+  transition: 0.4s;
+  visibility: hidden;
+
+  &:hover {
+    background-color: $first-color;
+  }
+}
+
+.scrolltop__icon {
+  font-size: 1.8rem;
+  color: $body-color;
+}
+
+.scroll-top {
+  visibility: visible;
+  bottom: 1rem;
+}
+
+.home__container {
+  height: calc(100vh - $header-height);
+}
+
+.home__title {
+  font-size: $biggesr-font-size;
+  color: $first-color;
+  margin-bottom: $mb-1;
+}
+
+.home__subtitle {
+  font-size: $h1-font-size;
+  color: $title-color;
+  margin-bottom: $mb-4;
+}
+
+.home__img {
+  width: 300px;
+  justify-self: center;
+}
+
+.button {
+  display: inline-block;
+  background-color: $first-color;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  &:hover {
+    background-color: $first-color-alt;
+  }
+}
+
+.about__data {
+  text-align: center;
+}
+
+.about__description {
+  margin-bottom: $mb-3;
+}
+
+.about__img {
+  width: 280px;
+  border-radius: 0.5rem;
+  justify-self: center;
+}
+
+.services__container {
+  row-gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.services__container {
+  text-align: center;
+}
+
+.services__img {
+  width: 64px;
+  height: 64px;
+  fill: $first-color;
+  margin-bottom: $mb-2;
+}
+
+.services__title {
+  font-size: $h3-font-size;
+  color: $title-color;
+  margin-bottom: $mb-1;
+}
+
+.services__description {
+  padding: 0 1.5rem;
+}
+
+.menu__container {
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
+.menu__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $container-color;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(3, 74, 40.15);
+  padding: 0.75rem;
+}
+
+.menu__img {
+  width: 100px;
+  align-self: center;
+  margin-bottom: $mb-2;
+}
+
+.menu__name,
+.menu__price {
+  font-weight: $font-semi-bold;
+  color: $title-color;
+}
+
+.menu__name {
+  font-size: $normal-font-size;
+}
+
+.menu__detail,
+.menu__price {
+  font-size: $small-font-size;
+}
+
+.menu__detail {
+  margin-bottom: $mb-1;
+}
+
+.menu__button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.625rem 0.813rem;
+  border-radius: 0.5rem 0 0.5rem 0;
+}
+
+.app__data {
+  text-align: center;
+}
+
+.app__description {
+  margin-bottom: $mb-5;
+}
+
+.app_stores {
+  margin-bottom: $mb-4;
+}
+
+.app__store {
+  width: 120px;
+  margin: 0 $mb-4;
+}
+
+.app__img {
+  width: 230px;
+  margin: 0 $mb-1;
+}
+
+.contact__container {
+  text-align: center;
+}
+.contact__desctiption {
+  margin-bottom: $mb-3;
+}
+
+.footer__container {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  row-gap: 2rem;
+}
+.footer__content {
+  text-align: center;
+}
+.footer__logo {
+  font-size: $h3-font-size;
+  color: $first-color;
+  font-weight: $font-semi-bold;
+}
+
+.footer__description {
+  display: block;
+  font-size: $small-font-size;
+  margin: 0.25rem 0 $mb-3;
+}
+
+.footer__social {
+  font-size: 1.5rem;
+  color: $title-color;
+  margin-right: $mb-2;
+}
+
+.footer__title {
+  font-size: $h2-font-size;
+  color: $title-color;
+  margin-bottom: $mb-2;
+}
+
+.footer__link {
+  display: inline-block;
+  color: $text-color;
+  margin-bottom: $mb-1;
+  &:hover {
+    color: $first-color;
+  }
+}
+
+.footer__copy {
+  text-align: center;
+  font-size: $small-font-size;
+  color: $text-color-light;
+  margin-top: 3.5rem;
 }
