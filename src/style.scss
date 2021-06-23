@@ -2,14 +2,18 @@
 
 @import 'reset.scss';
 
+:root {
+  --title-color: #393939;
+  --container-color: #ffffff;
+}
+
 $header-height: 3rem;
 $first-color: #069c54;
 $first-color-alt: #048654;
-$title-color: #393939;
+
 $text-color: #707070;
 $text-color-light: #a6a6a6;
 $body-color: #fbfefd;
-$container-color: #ffffff;
 
 $body-font: 'Poppins', sans-serif;
 $biggesr-font-size: 2.25rem;
@@ -32,6 +36,9 @@ $mb-6: 3rem;
 
 $z-tooltip: 10;
 $z-fixed: 100;
+
+$text-color-dark: #c7d1cc;
+$body-color-dark: #1d2521;
 
 @media screen and (min-width: 768px) {
   $biggesr-font-size: 4rem;
@@ -65,6 +72,22 @@ a {
   text-decoration: none;
 }
 
+body.dark-theme {
+  color: $text-color-dark;
+  background-color: $body-color-dark;
+  --title-color: #f1f3f2;
+  --container-color: #27302c;
+}
+
+.change-theme {
+  position: absolute;
+  right: 1rem;
+  top: 1.8rem;
+  color: $text-color;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 .section {
   padding: 4rem 0 2rem;
 }
@@ -76,7 +99,7 @@ a {
 
 .section-title {
   font-size: $h1-font-size;
-  color: $title-color;
+  color: var(--title-color);
   margin-bottom: $mb-3;
 }
 
@@ -211,7 +234,7 @@ a {
 
 .home__subtitle {
   font-size: $h1-font-size;
-  color: $title-color;
+  color: var(--title-color);
   margin-bottom: $mb-4;
 }
 
@@ -264,7 +287,7 @@ a {
 
 .services__title {
   font-size: $h3-font-size;
-  color: $title-color;
+  color: var(--title-color);
   margin-bottom: $mb-1;
 }
 
@@ -281,7 +304,7 @@ a {
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: $container-color;
+  background-color: var(--container-color);
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(3, 74, 40.15);
   padding: 0.75rem;
@@ -296,7 +319,7 @@ a {
 .menu__name,
 .menu__price {
   font-weight: $font-semi-bold;
-  color: $title-color;
+  color: -color;
 }
 
 .menu__name {
@@ -370,13 +393,13 @@ a {
 
 .footer__social {
   font-size: 1.5rem;
-  color: $title-color;
+  color: var(--title-color);
   margin-right: $mb-2;
 }
 
 .footer__title {
   font-size: $h2-font-size;
-  color: $title-color;
+  color: var(--title-color);
   margin-bottom: $mb-2;
 }
 
@@ -394,4 +417,104 @@ a {
   font-size: $small-font-size;
   color: $text-color-light;
   margin-top: 3.5rem;
+}
+
+@media screen and (min-width: 576px) {
+  .home__container,
+  .about__container,
+  .app__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .about__data,
+  .about__initial,
+  .app__data,
+  .app__initial,
+  .contact__container,
+  .contact__initial {
+    text-align: initial;
+  }
+
+  .about__img,
+  .app__img {
+    width: 380px;
+    order: -1;
+  }
+
+  .contact__container {
+    grid-template-columns: 1.75fr 1fr;
+    align-items: center;
+  }
+
+  .contact__button {
+    align-self: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding-top: 8rem;
+  }
+
+  .nav {
+    height: 4.5rem;
+  }
+
+  .nav__list {
+    display: flex;
+  }
+
+  .nav__item {
+    margin-left: $mb-5;
+    margin-bottom: 0;
+    &:nth-child(5) {
+      margin-right: $mb-5;
+    }
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+
+  .home__container {
+    height: 100vh;
+    justify-items: center;
+  }
+
+  .services__container,
+  .menu__container {
+    margin-top: $mb-6;
+  }
+
+  .menu__container {
+    grid-template-columns: repeat(3, 210px);
+    column-gap: 4rem;
+  }
+
+  .menu__content {
+    padding: 1.5rem;
+  }
+  .menu__img {
+    width: 130px;
+  }
+
+  .app__store {
+    margin: 0 $mb-1 0 0;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .bd-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home__img {
+    width: 500px;
+  }
+  .about__container,
+  .app__container {
+    column-gap: 7rem;
+  }
 }
