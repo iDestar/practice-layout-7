@@ -32,13 +32,9 @@ function scrollActive() {
     const sectionId = current.getAttribute('id');
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector('.nav__menu a[href*=' + sectionId + ']')
-        .classList.add('active-link');
+      document.querySelector('.main-nav a[href*=' + sectionId + ']').classList.add('active-link');
     } else {
-      document
-        .querySelector('.nav__menu a[href*=' + sectionId + ']')
-        .classList.remove('active-link');
+      document.querySelector('.main-nav a[href*=' + sectionId + ']').classList.remove('active-link');
     }
   });
 }
@@ -82,18 +78,12 @@ const selectedTheme = localStorage.getItem('selected-theme');
 const selectedIcon = localStorage.getItem('selected-icon');
 
 if (selectedTheme) {
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](
-    darkTheme
-  );
-  themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](
-    iconTheme
-  );
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+  themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme);
 }
 
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? 'dark' : 'light';
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun';
+const getCurrentTheme = () => (document.body.classList.contains(darkTheme) ? 'dark' : 'light');
+const getCurrentIcon = () => (themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun');
 
 const sr = ScrollReveal({
   origin: 'top',
